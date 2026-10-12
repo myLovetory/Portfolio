@@ -1114,3 +1114,51 @@ h1,h2,h3,.brand,.loader-mark {
     transition:opacity .2s ease
   }
 }
+
+/* Keep the mobile boot screen in a single column; the side HUD panels
+   otherwise overlap the console on narrow, tall browser viewports. */
+@media(max-width:640px) {
+  .loader {
+    min-height:100vh;
+    min-height:100svh;
+  }
+  .boot-user,.boot-nav,.boot-metrics,.boot-quote,.boot-connect,.boot-corner {
+    display:none!important;
+  }
+  .boot-topline {
+    top:max(18px,env(safe-area-inset-top));
+    left:20px;
+    right:20px;
+    justify-content:flex-start;
+    font-size:9px;
+  }
+  .boot-stage { inset:0; }
+  .energy-globe,.orbit { top:42%; }
+  .boot-logo-wrap {
+    top:38%;
+    width:92vw;
+  }
+  .boot-logo { font-size:clamp(50px,15vw,76px); }
+  .boot-subtitle {
+    font-size:clamp(10px,3vw,13px);
+    letter-spacing:.14em;
+  }
+  .boot-motto {
+    font-size:clamp(7px,2.2vw,9px);
+    letter-spacing:.04em;
+  }
+  .boot-console {
+    top:58%;
+    width:calc(100vw - 36px);
+    max-width:460px;
+    padding:14px 14px 12px;
+  }
+  .boot-console-title { font-size:clamp(10px,3vw,13px); }
+  .boot-progress-row>b { font-size:13px; }
+  .boot-log { font-size:clamp(8px,2.5vw,10px); }
+}
+@media(max-width:640px) and (max-height:700px) {
+  .boot-logo-wrap { top:30%; }
+  .boot-console { top:55%; }
+  .boot-log p:nth-child(n+3) { display:none; }
+}
