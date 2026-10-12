@@ -181,6 +181,86 @@ h1,h2,h3,.brand,.loader-mark {
     transition:opacity .2s ease!important
   }
 }
+
+@media(max-width:640px) {
+  .boot-console {
+    left:50%;
+    top:50%;
+    width:calc(100vw - 40px);
+    transform:translate(-50%,-50%)
+  }
+}
+
+/* Mobile boot scene: keep one clear loading column and reduce paint-heavy FX. */
+@media(max-width:640px) {
+  .loader {
+    background:radial-gradient(ellipse at 50% 42%,rgba(0,71,140,.2),transparent 48%),#020611
+  }
+  .loader-grid,.loader-stars,.loader:before,.loader:after,.boot-topline:after {
+    animation:none!important
+  }
+  .loader-grid { opacity:.12 }
+  .loader-stars,.loader:before { display:none }
+  .loader:after { opacity:.1 }
+  .boot-topline {
+    top:20px;
+    left:20px;
+    right:20px;
+    justify-content:center;
+    font-size:9px;
+    letter-spacing:.12em
+  }
+  .boot-topline span:last-child,.boot-user,.boot-nav,.boot-metrics,.boot-quote,.boot-connect,.boot-corner {
+    display:none
+  }
+  .boot-stage { inset:0 }
+  .energy-globe {
+    top:43%;
+    width:min(78vw,39vh);
+    filter:none;
+    opacity:.58;
+    animation:none
+  }
+  .globe-svg { animation:none }
+  .globe-svg defs filter { display:none }
+  .globe-svg circle { filter:none }
+  .orbit { top:43%; animation:none; box-shadow:none }
+  .orbit-a { width:88vw;height:28vw;opacity:.45 }
+  .orbit-b { width:76vw;height:40vw;opacity:.28 }
+  .orbit-c,.boot-beam,.holo-platform { display:none }
+  .boot-logo-wrap {
+    top:31%;
+    width:90vw;
+    animation:none
+  }
+  .boot-logo-wrap:before { display:none }
+  .boot-logo {
+    font-size:clamp(54px,16vw,76px);
+    filter:drop-shadow(0 0 10px rgba(23,194,255,.45));
+    text-shadow:1px 0 rgba(255,42,221,.45),-1px 0 rgba(21,235,255,.45)
+  }
+  .boot-logo.glitch:before,.boot-logo.glitch:after { display:none }
+  .boot-logo span { animation:none }
+  .boot-subtitle { margin-top:10px }
+  .boot-motto { margin-top:10px;font-size:8px }
+  .boot-motto i { margin:0 5px }
+  .boot-console {
+    top:59%;
+    width:calc(100vw - 40px);
+    max-width:420px;
+    padding:14px 15px;
+    clip-path:none;
+    border-radius:8px;
+    box-shadow:0 0 16px rgba(19,183,255,.14);
+    animation:none
+  }
+  .boot-console-title { font-size:11px }
+  .boot-console-title span { display:none }
+  .boot-progress-row { margin:12px 0 }
+  .boot-progress-track { height:12px }
+  .boot-progress-track i { display:none }
+  .boot-log { grid-template-columns:1fr;font-size:9px;gap:5px }
+}
 /* Cinematic sci-fi boot sequence */
 .loader {
   --boot-cyan:#26edff;
@@ -508,7 +588,11 @@ h1,h2,h3,.brand,.loader-mark {
   background:linear-gradient(110deg,rgba(2,20,43,.88),rgba(8,12,47,.72));
   box-shadow:0 0 20px rgba(19,183,255,.25),inset 0 0 25px rgba(32,95,255,.12);
   clip-path:polygon(0 0,96% 0,100% 16%,100% 82%,96% 100%,4% 100%,0 84%);
-  animation:panel-boot .75s .7s ease-out both
+  animation:boot-console-arrive .75s .7s ease-out both
+}
+@keyframes boot-console-arrive {
+  from { opacity:0;filter:blur(5px);transform:translate(-50%,8px) }
+  to { opacity:1;filter:none;transform:translate(-50%,0) }
 }
 .boot-console-title {
   display:flex;
