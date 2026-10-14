@@ -272,6 +272,9 @@ a {
   grid-template-columns:1.6fr .75fr;
   gap:20px
 }
+.about-grid-profile {
+  grid-template-columns:minmax(0,1fr)
+}
 .cyber-panel,.quote-panel {
   border:1px solid rgba(64,245,231,.28);
   background:linear-gradient(135deg,rgba(8,19,36,.88),rgba(8,12,27,.85));

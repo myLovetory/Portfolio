@@ -1228,6 +1228,109 @@ header {
 .skill-list.single-column {
   columns:1
 }
+.skill-module .skill-list li {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-height:50px;
+  padding:4px 0;
+  list-style:none;
+  break-inside:avoid;
+}
+.skill-module .skill-list.software-list {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:6px 14px;
+  columns:initial;
+}
+.skill-module .skill-list li::before {
+  content:"";
+  display:inline-grid;
+  place-items:center;
+  flex:0 0 44px;
+  width:44px;
+  height:44px;
+  border:1px solid rgba(63,220,255,.52);
+  border-radius:9px;
+  background:linear-gradient(145deg,rgba(25,70,101,.72),rgba(12,22,45,.9));
+  color:#5ceeff;
+  font:700 15px/1 'DM Mono',monospace;
+  letter-spacing:-.04em;
+  box-shadow:inset 0 0 12px rgba(28,189,255,.08),0 0 10px rgba(32,204,255,.06);
+}
+.skill-module:nth-child(1) .skill-list li:nth-child(1)::before { content:"Py"; color:#ffd45c; }
+.skill-module:nth-child(1) .skill-list li:nth-child(2)::before { content:"C#"; color:#c49aff; }
+.skill-module:nth-child(1) .skill-list li:nth-child(3)::before { content:".N"; color:#bba4ff; }
+.skill-module:nth-child(1) .skill-list li:nth-child(4)::before { content:"DB"; color:#66dbff; }
+.skill-module:nth-child(2) .skill-list li:nth-child(1)::before { content:"Fg"; color:#ff8c67; }
+.skill-module:nth-child(2) .skill-list li:nth-child(2)::before { content:"U"; color:#fff; }
+.skill-module:nth-child(2) .skill-list li:nth-child(3)::before { content:"DA"; font-size:10px; }
+.skill-module:nth-child(2) .skill-list li:nth-child(4)::before { content:"Ps"; color:#66c9ff; }
+.skill-module:nth-child(2) .skill-list li:nth-child(5)::before { content:"Ai"; color:#ffad63; }
+.skill-module:nth-child(2) .skill-list li:nth-child(6)::before { content:"B"; color:#ffad63; }
+.skill-module:nth-child(3) .skill-list li:nth-child(1)::before { content:"EN"; color:#86d4ff; }
+.skill-module:nth-child(3) .skill-list li:nth-child(2)::before { content:"日"; color:#ff9ba7; font-family:'Noto Sans JP',sans-serif; font-size:13px; }
+.skill-module:nth-child(2) .skill-list li:nth-child(1)::before,
+.skill-module:nth-child(2) .skill-list li:nth-child(2)::before,
+.skill-module:nth-child(2) .skill-list li:nth-child(4)::before,
+.skill-module:nth-child(2) .skill-list li:nth-child(5)::before,
+.skill-module:nth-child(2) .skill-list li:nth-child(6)::before {
+  content:"";
+  border:0;
+  border-radius:0;
+  background-color:transparent;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+  box-shadow:none;
+}
+.skill-module:nth-child(2) .skill-list li:nth-child(1)::before {
+  background-image:url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg");
+}
+.skill-module:nth-child(2) .skill-list li:nth-child(2)::before {
+  background-image:url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg");
+  filter:brightness(0) invert(1);
+}
+.skill-module:nth-child(2) .skill-list li:nth-child(4)::before {
+  background-image:url("https://cdn.simpleicons.org/adobephotoshop/31A8FF");
+}
+.skill-module:nth-child(2) .skill-list li:nth-child(5)::before {
+  background-image:url("https://cdn.simpleicons.org/adobeillustrator/FF9A00");
+}
+.skill-module:nth-child(2) .skill-list li:nth-child(6)::before {
+  background-image:url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg");
+}
+.skill-module:nth-child(2) .skill-list li:nth-child(4)::before,
+.skill-module:nth-child(2) .skill-list li:nth-child(5)::before {
+  width:44px;
+  height:44px;
+  flex-basis:44px;
+  border:1px solid currentColor;
+  border-radius:11px;
+  background-size:64% auto;
+}
+.skill-module:nth-child(2) .skill-list li:nth-child(4)::before {
+  content:"Ps";
+  color:#31a8ff;
+  background-color:#001e36;
+  background-image:none;
+  font:800 19px/1 'Inter',sans-serif;
+  letter-spacing:-.08em;
+}
+.skill-module:nth-child(2) .skill-list li:nth-child(5)::before {
+  content:"Ai";
+  color:#ff9a00;
+  background-color:#330000;
+  background-image:none;
+  font:800 19px/1 'Inter',sans-serif;
+  letter-spacing:-.08em;
+}
+.skill-module:nth-child(2) .skill-list li:nth-child(6)::before {
+  width:44px;
+  height:44px;
+  flex-basis:44px;
+  background-size:contain;
+}
 .language-chart {
   display:flex;
   flex-direction:column;
@@ -1535,4 +1638,149 @@ header {
   .hero-hud .mt-11.flex { gap:10px 14px }
   .hero-hud .mt-11.flex b { font-size:12px }
   .mission-count { right:52px }
+}
+
+/* Tighten the profile panel's paragraph rhythm and metadata grouping. */
+.about-grid-profile .cyber-panel > p {
+  line-height:1.65;
+}
+.profile-paragraph-gap {
+  display:block;
+  height:14px;
+}
+.about-grid-profile .cyber-panel > .mt-7.grid {
+  grid-template-columns:max-content max-content;
+  column-gap:clamp(48px,9vw,140px);
+  row-gap:12px;
+  margin-top:20px;
+}
+.about-grid-profile .cyber-panel > .button-primary.mt-7 {
+  margin-top:20px;
+}
+.section-shell {
+  scroll-margin-top:92px;
+}
+.skills-grid {
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+.mission-dialog {
+  overflow:hidden;
+}
+.mission-frame {
+  max-height:min(88svh,900px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  scrollbar-gutter:stable;
+}
+.about-grid-profile .cyber-panel > p {
+  max-width:100ch;
+  font-size:15px;
+  line-height:1.8;
+}
+/* Bring the introduction and avatar together inside one shared hero frame. */
+.hero-hud {
+  border:1px solid rgba(43,196,255,.3);
+  background:linear-gradient(125deg,rgba(5,13,30,.52),rgba(6,12,28,.3));
+  box-shadow:0 0 42px rgba(14,113,222,.08),inset 0 0 60px rgba(17,85,150,.05);
+}
+.hero-hud>div:first-child {
+  border:0;
+  background:transparent;
+  box-shadow:none;
+  clip-path:none;
+  padding:25px 25px 20px;
+}
+@media (max-width:1024px) {
+  .skills-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .skill-module:last-child { grid-column:1/-1; }
+}
+@media (min-width:641px) and (max-width:1024px) {
+  .hero-hud {
+    min-height:0;
+    gap:clamp(20px,3vw,32px);
+    padding:clamp(28px,4vw,40px) clamp(22px,3.2vw,34px);
+    grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+    align-items:center;
+  }
+  .hero-hud>div:first-child { padding:12px 8px; }
+  .hero-hud .hero-terminal { min-height:clamp(320px,38vw,390px); }
+  .hero-hud .avatar-image { width:min(74%,320px); height:min(86%,360px); }
+}
+@media(max-width:640px) {
+  .hero-hud>div:first-child { padding:18px 14px; }
+  .section-shell { scroll-margin-top:78px; }
+  .skills-grid { grid-template-columns:minmax(0,1fr); }
+  .skill-module:last-child { grid-column:auto; }
+  .mission-dialog { overflow:hidden; }
+  .mission-frame { max-height:94svh; }
+  .skill-module .skill-list.software-list { grid-template-columns:1fr; }
+  .about-grid-profile .cyber-panel > .mt-7.grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    column-gap:18px;
+  }
+}
+.education-module .panel-heading {
+  display:inline-block;
+  padding-block:2px;
+  font-family:'Noto Sans','Inter',sans-serif;
+  font-size:11px;
+  line-height:1.55;
+  letter-spacing:.12em;
+  font-weight:800;
+  vertical-align:middle;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+.project-card {
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.project-card .project-content {
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  align-items:stretch;
+}
+.project-card .project-link {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  margin-top:auto;
+  padding:12px 0 0;
+  font-family:'Inter','Noto Sans','Noto Sans JP',sans-serif;
+  font-size:12px;
+  font-weight:700;
+  line-height:1.5;
+  letter-spacing:.035em;
+}
+/* Use one glyph-complete interface font so Vietnamese marks do not fall back mid-word. */
+body,
+body button,
+body input,
+body textarea,
+body select {
+  font-family:'Inter','Noto Sans','Noto Sans JP',sans-serif;
+  text-rendering:optimizeLegibility;
+}
+body :is(.nav a,.eyebrow,.section-label,.section-code,.project-kicker,.panel-heading,
+  .terminal-top,.terminal-tag,.terminal-coord,.filter-chip,.project-role,.live-badge,
+  .company,.data-line>span,.timeline-item time,.timeline-date,.mission-topline,
+  .mission-heading>span,.mission-role,.mission-copy h3,.mission-tags span,
+  .mission-footer,.tag-list span,.skill-pills span,.contact-list small,.project-link) {
+  font-family:'Inter','Noto Sans','Noto Sans JP',sans-serif;
+  line-height:1.45;
+}
+html[lang="vi"] body,
+html[lang="vi"] body button,
+html[lang="vi"] body input,
+html[lang="vi"] body textarea,
+html[lang="vi"] body select,
+html[lang="vi"] body :is(.nav a,.eyebrow,.section-label,.section-code,.project-kicker,
+  .panel-heading,.terminal-top,.terminal-tag,.terminal-coord,.filter-chip,.project-role,
+  .live-badge,.company,.data-line>span,.timeline-item time,.timeline-date,.mission-topline,
+  .mission-heading>span,.mission-role,.mission-copy h3,.mission-tags span,.mission-footer,
+  .tag-list span,.skill-pills span,.contact-list small,.project-link) {
+  font-family:'Noto Sans','Inter','Noto Sans JP',sans-serif;
 }
