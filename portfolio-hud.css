@@ -384,7 +384,7 @@ header {
   filter:saturate(1.12)
 }
 .project-card[data-project="employees"] .project-image {
-  object-fit:contain;
+  object-fit:cover;
   object-position:center;
   background:#07152b
 }
@@ -640,6 +640,15 @@ header {
   color:#44eaff;
   font-size:23px;
   box-shadow:0 0 19px rgba(42,224,255,.12)
+}
+.education-module .education-logo {
+  display:block;
+  flex:0 0 88px;
+  width:88px;
+  height:88px;
+  border:0;
+  object-fit:cover;
+  box-shadow:none;
 }
 .education-module h3 {
   margin:0 0 5px;
