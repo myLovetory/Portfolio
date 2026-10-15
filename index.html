@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#030712">
   <meta name="description" content="Portfolio của Nguyễn Giang Linh — Kỹ sư Công nghệ thông tin, định hướng phát triển phần mềm và hệ thống thông tin.">
   <title>Nguyễn Giang Linh — Information Technology</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" async></script>
   <script>
     tailwind.config = {
       theme: {
@@ -24,7 +24,8 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="cyberpunk.css">
   <link rel="stylesheet" href="portfolio-hud.css">
@@ -96,7 +97,7 @@
       <div class="hero-terminal" aria-label="Khu vực hình ảnh giới thiệu, có thể bổ sung sau">
         <div class="terminal-top"><span>PLAYER_PROFILE.exe</span><span>● ● ●</span></div>
         <div class="terminal-body"><span class="terminal-cross">+</span><div class="hero-orbit-rings" aria-hidden="true"><i></i><i></i><i></i></div>
-          <img class="avatar-image" src="assets/Ảnh hồ sơ/image 6.png" alt="Nguyễn Giang Linh" fetchpriority="high">
+          <img class="avatar-image" src="assets/Ảnh hồ sơ/image 6-optimized.jpg" alt="Nguyễn Giang Linh" fetchpriority="high" decoding="async" width="867" height="1100">
           <span class="terminal-coord">21°01' N / 105°51' E</span>
         </div>
       </div>
@@ -113,7 +114,7 @@
       <div class="project-grid">
         <article class="project-card" data-category="casual" data-project="casual">
           <!-- PROJECT IMAGE 1: đặt ảnh trong assets/ rồi thay cả khối project-placeholder bằng <img class="project-image" src="assets/casual-game.jpg" alt="Gameplay 100+ Game Thử Thách &amp; Thư Giãn">. -->
-          <div class="project-placeholder"><img class="project-image" src="assets/Ảnh hồ sơ/Dự án 1.png" alt="Ảnh giới thiệu dự án 1: 100+ Game Thử Thách &amp; Thư Giãn" loading="lazy"><i class="corner corner-a"></i><i class="corner corner-b"></i></div>
+          <div class="project-placeholder"><img class="project-image" src="assets/Ảnh hồ sơ/Dự án 1-optimized.jpg" alt="Ảnh giới thiệu dự án 1: 100+ Game Thử Thách &amp; Thư Giãn" loading="lazy" decoding="async" width="1200" height="675"><i class="corner corner-a"></i><i class="corner corner-b"></i></div>
           <div class="project-content"><div class="project-kicker">CASUAL / GAME DESIGN</div><h3>100+ Game Thử Thách &amp; Thư Giãn</h3><div class="project-role">ROLE <b>Gameplay Designer</b></div><p>Thiết kế gameplay casual với nhiều minigame đa dạng, phù hợp cho mọi lứa tuổi. Tập trung vào thử thách dễ tiếp cận và vòng lặp chơi thư giãn.</p><div class="tag-list"><span>Gameplay Design</span><span>Hypercasual</span><span>Level Design</span></div><button class="project-link" type="button" data-open-project="casual">Mở mission briefing <span>↗</span></button></div>
         </article>
         <article class="project-card" data-category="strategy" data-project="strategy">
@@ -123,16 +124,16 @@
         </article>
         <article class="project-card" data-category="academic" data-project="academic">
           <!-- PROJECT IMAGE 3: thay cả khối project-placeholder bằng ảnh assets/ptit-handbook.jpg. -->
-          <div class="project-placeholder blue-slot"><img class="project-image" src="assets/Ảnh hồ sơ/Dự án 3.png" alt="Ảnh giới thiệu dự án 3: Đồ án tốt nghiệp PTIT Handbook" loading="lazy"><i class="corner corner-a"></i><i class="corner corner-b"></i></div>
+          <div class="project-placeholder blue-slot"><img class="project-image" src="assets/Ảnh hồ sơ/Dự án 3-optimized.jpg" alt="Ảnh giới thiệu dự án 3: Đồ án tốt nghiệp PTIT Handbook" loading="lazy" decoding="async" width="1200" height="677"><i class="corner corner-a"></i><i class="corner corner-b"></i></div>
           <div class="project-content"><div class="project-kicker">UNITY 3D / ACADEMIC</div><h3>Đồ án tốt nghiệp: PTIT Handbook</h3><div class="project-role">ROLE <b>Game Design &amp; Implementation</b></div><p>Trải nghiệm khám phá khuôn viên 3D, kết hợp hướng dẫn, tương tác NPC, nhiệm vụ và minigame.</p><div class="tag-list"><span>Quest Design</span><span>Unity Dev</span><span>3D Modeling</span><span>3D Animation</span><span>UI/UX Design</span><span>Interaction</span></div><button class="project-link" type="button" data-open-project="academic">Mở mission briefing <span>↗</span></button></div>
         </article>
         <article class="project-card" data-category="web" data-project="students">
-          <div class="project-placeholder violet-slot"><img class="project-image" src="assets/Ảnh hồ sơ/Dư án 4.png" alt="Ảnh giới thiệu dự án 4: Exam Bank Management System" loading="lazy"><i class="corner corner-a"></i><i class="corner corner-b"></i></div>
+          <div class="project-placeholder violet-slot"><img class="project-image" src="assets/Ảnh hồ sơ/Dư án 4-optimized.jpg" alt="Ảnh giới thiệu dự án 4: Exam Bank Management System" loading="lazy" decoding="async" width="1200" height="542"><i class="corner corner-a"></i><i class="corner corner-b"></i></div>
           <div class="project-content"><div class="project-kicker">WEB DEVELOPMENT / PYTHON</div><h3>Exam Bank Management System</h3><div class="project-role">ROLE <b>Web Developer</b></div><p>An exam bank management system built with Python, HTML, CSS, and SQLite.</p><div class="tag-list"><span>Python</span><span>HTML</span><span>CSS</span><span>SQLite</span></div><button class="project-link" type="button" data-open-project="students">Open project details <span>↗</span></button></div>
         </article>
         <article class="project-card" data-category="web" data-project="employees">
           <!-- PROJECT IMAGE 5: replace this placeholder with an <img class="project-image" src="assets/employee-management.jpg" alt="Employee Management Website"> when the project image is ready. -->
-          <div class="project-placeholder blue-slot"><img class="project-image" src="assets/Ảnh hồ sơ/Dự án 5.png" alt="Ảnh giới thiệu dự án 5: Employee Management Website" loading="lazy"><i class="corner corner-a"></i><i class="corner corner-b"></i></div>
+          <div class="project-placeholder blue-slot"><img class="project-image" src="assets/Ảnh hồ sơ/Dự án 5-optimized.jpg" alt="Ảnh giới thiệu dự án 5: Employee Management Website" loading="lazy" decoding="async" width="1200" height="549"><i class="corner corner-a"></i><i class="corner corner-b"></i></div>
           <div class="project-content"><div class="project-kicker">WEB DEVELOPMENT / DJANGO</div><h3>Employee Management Website</h3><div class="project-role">ROLE <b>Web Developer</b></div><p>An employee management website built with Django. The language chart highlights Python.</p><div class="tag-list"><span>Django</span><span>Python</span><span>SQLite</span><span>PostgreSQL</span></div><button class="project-link" type="button" data-open-project="employees">Open project details <span>↗</span></button></div>
         </article>
       </div>

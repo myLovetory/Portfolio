@@ -180,37 +180,22 @@ if (cursorHalo && !motionReduced && window.matchMedia('(hover: hover) and (point
   }, { passive: true });
 }
 
-// Progress is an aesthetic indicator capped until the browser's actual load event.
+// Keep the boot screen brief; lazy images and third-party resources must not hold up the page.
 const loader = document.querySelector('#loader');
 const statusPercent = document.querySelector('#loader-percent');
 const loaderStatus = document.querySelector('#loader-status');
 const progressBar = document.querySelector('#loader-progress');
-let displayedProgress = 0;
-let loadingFinished = document.readyState === 'complete';
-let animationFrame = 0;
 
 function revealPage() {
   if (loader.hidden || !loader.isConnected) return;
-  cancelAnimationFrame(animationFrame);
-  loadingFinished = true;
-  displayedProgress = 100;
   statusPercent.textContent = '100%';
   loaderStatus.innerHTML = '&gt; Portfolio ready <b>OK</b>';
   progressBar.style.width = '100%';
   loader.classList.add('loader-exit');
-  window.setTimeout(() => { loader.hidden = true; }, 700);
+  window.setTimeout(() => { loader.hidden = true; }, 350);
 }
 
-function animateProgress() {
-  const target = loadingFinished ? 100 : 92;
-  if (displayedProgress < target) displayedProgress = Math.min(target, displayedProgress + Math.max(.12, (target - displayedProgress) * .075));
-  statusPercent.textContent = `${Math.floor(displayedProgress)}%`;
-  progressBar.style.width = `${displayedProgress}%`;
-  if (loadingFinished && displayedProgress >= 99.5) revealPage();
-  else animationFrame = requestAnimationFrame(animateProgress);
-}
-animationFrame = requestAnimationFrame(animateProgress);
-if (!loadingFinished) window.addEventListener('load', () => { loadingFinished = true; }, { once: true });
+if (loader && !loader.hidden) window.setTimeout(revealPage, 450);
 
 // Language switcher for the page interface. Keep each selector's entries in document order.
 const translations = {
